@@ -78,3 +78,7 @@ CPU Usage     : 21.4%
 - GitHub Repository Management
 - Error Handling
 - Process Monitoring
+
+## Sample Output
+
+![CPU Monitor Output](docs/images/cpu-monitor-output.png)
