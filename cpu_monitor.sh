@@ -5,6 +5,7 @@ YELLOW="\e[33m"
 BLUE="\e[34m"
 CYAN="\e[36m"
 RESET="\e[0m"
+RED="\e[31m"
 
 # ------------------------------------
 # Linux CPU Monitoring Script
@@ -14,6 +15,15 @@ RESET="\e[0m"
 echo -e "${BLUE}======================================${RESET}"
 echo -e "${CYAN}      CPU Monitoring Script${RESET}"
 echo -e "${BLUE}======================================${RESET}"
+
+# Check if bc is installed
+if ! command -v bc >/dev/null
+then
+    echo -e "${RED}Error:${RESET} 'bc' is not installed."
+    echo "Install it using:"
+    echo "sudo apt install bc"
+    exit 1
+fi
 
 # Collect system information
 CURRENT_DATE=$(date)
