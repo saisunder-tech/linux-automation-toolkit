@@ -1,22 +1,19 @@
 # Linux Automation Toolkit
 
-A Bash scripting project that automates basic Linux system monitoring tasks. This project was built while learning Linux administration, shell scripting, Git, and GitHub.
+A collection of Bash scripts for Linux system monitoring, administration, maintenance, and automation. This project was built while learning Linux administration, shell scripting, Git, and GitHub on Ubuntu/WSL.
 
 ---
 
 ## Features
 
-### CPU Monitoring
-- Display current date and time
-- Display current logged-in user
-- Display hostname
-- Monitor CPU idle percentage
-- Calculate CPU usage
-
-### Memory Monitoring
-- Display total memory
-- Display used memory
-- Display free memory
+- CPU monitoring with colored output and dependency checking
+- Memory and disk usage monitoring
+- Service status checking
+- Directory backup and archiving
+- User creation and deletion
+- Log file cleanup
+- Cron job setup and scheduling
+- ANSI color demonstration
 
 ---
 
@@ -24,69 +21,51 @@ A Bash scripting project that automates basic Linux system monitoring tasks. Thi
 
 - Linux (Ubuntu / WSL)
 - Bash
-- Git
-- GitHub
+- Git & GitHub
+- Cron
+- Standard Linux utilities (`top`, `free`, `df`, `tar`, `find`, `systemctl`, etc.)
 
 ---
 
 ## Project Structure
 
-```
+```text
 linux-automation-toolkit/
-│
 ├── scripts/
+│   ├── backup.sh
+│   ├── colors_demo.sh
 │   ├── cpu_monitor.sh
+│   ├── create_user.sh
+│   ├── cron_setup.sh
+│   ├── delete_user.sh
+│   ├── disk_usage.sh
+│   ├── log_cleanup.sh
 │   ├── memory_monitor.sh
-│   └── colors_demo.sh
-│
+│   └── service_status.sh
 ├── docs/
-├── logs/
-│
+│   └── images/
+├── LICENSE
 ├── README.md
 └── .gitignore
-```
 
 ---
 
-## How to Run
+## Usage
 
-# CPU Monitor
-chmod +x scripts/cpu_monitor.sh
+```bash
+chmod +x scripts/*.sh
+
 ./scripts/cpu_monitor.sh
-
-# Memory Monitor
-chmod +x scripts/memory_monitor.sh
 ./scripts/memory_monitor.sh
-
----
-
-## Sample Output
-
-```text
-======================================
-      CPU Monitoring Script
-======================================
-
-Date and Time : Mon Jul 6 17:58:50 UTC 2026
-Current User  : sunder
-Hostname      : LAPTOP-CHSM6H93
-CPU Idle      : 78.6%
-CPU Usage     : 21.4%
+./scripts/disk_usage.sh
+./scripts/service_status.sh ssh
+./scripts/backup.sh <directory>
+sudo ./scripts/create_user.sh <username>
+sudo ./scripts/delete_user.sh <username>
+./scripts/log_cleanup.sh <log-directory> <days>
+./scripts/cron_setup.sh "*/5 * * * *" "/path/to/script.sh"
+./scripts/colors_demo.sh
 ```
-## Memory Monitor Output
-
-```text
-======================================
-      Memory Monitoring Script
-======================================
-
-Date and Time : Tue Jul 7 20:15:00 UTC 2026
-Current User  : sunder
-Hostname      : LAPTOP-CHSM6H93
-
-Total Memory  : 7800 MB
-Used Memory   : 2450 MB
-Free Memory   : 5350 MB
 
 ---
 
@@ -96,10 +75,17 @@ Free Memory   : 5350 MB
 - Bash Scripting
 - Shell Automation
 - Git Version Control
-- GitHub Repository Management
-- Error Handling
-- Process Monitoring
+- GitHub Workflow
+- System Monitoring
+- User and Service Management
+- Task Scheduling with Cron
 
-## Sample Output
+---
 
-![CPU Monitor Output](docs/images/cpu-monitor-output.png)
+## Future Enhancements
+
+- Add centralized logging for all scripts.
+- Support configuration files for customizable settings.
+- Add automated tests and continuous integration.
+- Package the toolkit for easier installation and distribution.
+
